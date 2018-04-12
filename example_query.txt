@@ -1,0 +1,10 @@
+PREFIX text: <http://jena.apache.org/text#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX : <undefined>
+PREFIX dc: <http://purl.org/dc/terms/>
+
+SELECT ?s ?label WHERE { ?s text:query (rdfs:label 'A*' 25) .
+  ?s rdfs:label ?label .
+  filter (lang(?label) = 'en')
+}
